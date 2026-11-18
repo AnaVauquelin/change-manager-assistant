@@ -1,0 +1,10 @@
+streamlit
+fastapi
+uvicorn
+requests
+pandas
+jira
+python-dotenv
+easyocr
+pillow
+numpy
