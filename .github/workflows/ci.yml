@@ -1,0 +1,22 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install fastapi uvicorn pydantic python-jira python-dotenv requests httpx pytest ruff
+      - name: Lint with Ruff
+        run: ruff check main.py tests/
+      - name: Run unit tests
+        run: pytest -v
