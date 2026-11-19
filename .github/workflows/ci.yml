@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install dependencies
-        run: pip install fastapi uvicorn pydantic python-jira python-dotenv requests httpx pytest ruff
+        run: pip install fastapi uvicorn pydantic jira python-dotenv requests httpx pytest ruff
       - name: Lint with Ruff
         run: ruff check main.py tests/
       - name: Run unit tests
